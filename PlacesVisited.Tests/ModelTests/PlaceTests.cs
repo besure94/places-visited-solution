@@ -11,7 +11,7 @@ namespace PlacesVisited.Tests
     [TestMethod]
     public void PlaceConstructor_CreatesInstanceOfPlace_Place()
     {
-      Place newPlace = new Place("Vancouver", "3 days", "Brandon");
+      Place newPlace = new Place("Vancouver", "3 days", "Brandon", "Biked to Stanley Park.");
       Assert.AreEqual(typeof(Place), newPlace.GetType());
     }
 
@@ -19,7 +19,7 @@ namespace PlacesVisited.Tests
     public void GetCityName_ReturnsCityName_String()
     {
       string cityName = "Vancouver";
-      Place newPlace = new Place(cityName, "3 days", "Brandon");
+      Place newPlace = new Place(cityName, "3 days", "Brandon", "Biked to Stanley Park.");
       string result = newPlace.CityName;
       Assert.AreEqual(cityName, result);
     }
@@ -28,7 +28,7 @@ namespace PlacesVisited.Tests
     public void SetCityName_SetCityName_String()
     {
       string cityName = "Vancouver";
-      Place newPlace = new Place(cityName, "5 days", "Brandon");
+      Place newPlace = new Place(cityName, "5 days", "Brandon", "Biked to Stanley Park.");
       string updatedCityName = "Philadelphia";
       newPlace.CityName = updatedCityName;
       string result = newPlace.CityName;
@@ -39,7 +39,7 @@ namespace PlacesVisited.Tests
     public void GetLengthOfStay_ReturnsLengthOfStay_String()
     {
       string lengthOfStay = "3 days";
-      Place newPlace = new Place("Vancouver", lengthOfStay, "Brandon");
+      Place newPlace = new Place("Vancouver", lengthOfStay, "Brandon", "Biked to Stanley Park.");
       string result = newPlace.LengthOfStay;
       Assert.AreEqual(lengthOfStay, result);
     }
@@ -48,7 +48,7 @@ namespace PlacesVisited.Tests
     public void SetLengthOfStay_SetLengthOfStay_String()
     {
       string lengthOfStay = "3 days";
-      Place newPlace = new Place("Vancouver", lengthOfStay, "Brandon");
+      Place newPlace = new Place("Vancouver", lengthOfStay, "Brandon", "Biked to Stanley Park.");
       string updatedLengthOfStay = "5 days";
       newPlace.LengthOfStay = updatedLengthOfStay;
       string result = newPlace.LengthOfStay;
@@ -59,7 +59,7 @@ namespace PlacesVisited.Tests
     public void GetCompanions_ReturnsCompanions_String()
     {
       string companions = "Brandon";
-      Place newPlace = new Place("Vancouver", "3 days", companions);
+      Place newPlace = new Place("Vancouver", "3 days", companions, "Biked to Stanley Park.");
       string result = newPlace.Companions;
       Assert.AreEqual(companions, result);
     }
@@ -68,11 +68,20 @@ namespace PlacesVisited.Tests
     public void SetCompanions_SetCompanions_String()
     {
       string companions = "Brandon";
-      Place newPlace = new Place("Vancouver", "3 days", companions);
+      Place newPlace = new Place("Vancouver", "3 days", companions, "Biked to Stanley Park.");
       string updatedCompanions = "Kai";
       newPlace.Companions = updatedCompanions;
       string result = newPlace.Companions;
       Assert.AreEqual(updatedCompanions, result);
+    }
+
+    [TestMethod]
+    public void GetJournalEntry_ReturnsJournalEntry_String()
+    {
+      string journalEntry = "Biked to Stanley Park.";
+      Place newPlace = new Place("Vancouver", "3 days", "Brandon", journalEntry);
+      string result = newPlace.JournalEntry;
+      Assert.AreEqual(journalEntry, result);
     }
   }
 }
