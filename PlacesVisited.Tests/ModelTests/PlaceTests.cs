@@ -11,7 +11,7 @@ namespace PlacesVisited.Tests
     [TestMethod]
     public void PlaceConstructor_CreatesInstanceOfPlace_Place()
     {
-      Place newPlace = new Place("Vancouver");
+      Place newPlace = new Place("Vancouver", "3 days");
       Assert.AreEqual(typeof(Place), newPlace.GetType());
     }
 
@@ -19,7 +19,7 @@ namespace PlacesVisited.Tests
     public void GetCityName_ReturnsCityName_String()
     {
       string cityName = "Vancouver";
-      Place newPlace = new Place(cityName);
+      Place newPlace = new Place(cityName, "3 days");
       string result = newPlace.CityName;
       Assert.AreEqual(cityName, result);
     }
@@ -28,11 +28,20 @@ namespace PlacesVisited.Tests
     public void SetCityName_SetCityName_String()
     {
       string cityName = "Vancouver";
-      Place newPlace = new Place(cityName);
+      Place newPlace = new Place(cityName, "5 days");
       string updatedCityName = "Philadelphia";
       newPlace.CityName = updatedCityName;
       string result = newPlace.CityName;
       Assert.AreEqual(updatedCityName, result);
+    }
+
+    [TestMethod]
+    public void GetLengthOfStay_ReturnsLengthOfStay_String()
+    {
+      string lengthOfStay = "3 days";
+      Place newPlace = new Place("Vancouver", lengthOfStay);
+      string result = newPlace.LengthOfStay;
+      Assert.AreEqual(lengthOfStay, result);
     }
   }
 }

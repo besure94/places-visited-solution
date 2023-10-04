@@ -5,9 +5,11 @@ namespace PlacesVisited.Models
   public class Place
   {
     public string CityName { get; set; }
-    public Place(string cityName)
+    public string LengthOfStay { get; }
+    public Place(string cityName, string lengthOfStay)
     {
       CityName = cityName;
+      LengthOfStay = lengthOfStay;
     }
   }
 }
