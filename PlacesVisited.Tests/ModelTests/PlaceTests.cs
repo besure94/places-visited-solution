@@ -63,5 +63,16 @@ namespace PlacesVisited.Tests
       string result = newPlace.Companions;
       Assert.AreEqual(companions, result);
     }
+
+    [TestMethod]
+    public void SetCompanions_SetCompanions_String()
+    {
+      string companions = "Brandon";
+      Place newPlace = new Place("Vancouver", "3 days", companions);
+      string updatedCompanions = "Kai";
+      newPlace.Companions = updatedCompanions;
+      string result = newPlace.Companions;
+      Assert.AreEqual(updatedCompanions, result);
+    }
   }
 }
