@@ -83,5 +83,16 @@ namespace PlacesVisited.Tests
       string result = newPlace.JournalEntry;
       Assert.AreEqual(journalEntry, result);
     }
+
+    [TestMethod]
+    public void SetJournalEntry_SetJournalEntry_String()
+    {
+      string journalEntry = "Biked to Stanley Park.";
+      Place newPlace = new Place("Vancouver", "3 days", "Brandon", journalEntry);
+      string updatedJournalEntry = "Took ferry to North Vancouver.";
+      newPlace.JournalEntry = updatedJournalEntry;
+      string result = newPlace.JournalEntry;
+      Assert.AreEqual(updatedJournalEntry, result);
+    }
   }
 }
