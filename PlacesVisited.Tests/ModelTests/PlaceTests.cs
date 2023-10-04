@@ -23,5 +23,16 @@ namespace PlacesVisited.Tests
       string result = newPlace.CityName;
       Assert.AreEqual(cityName, result);
     }
+
+    [TestMethod]
+    public void SetCityName_SetCityName_String()
+    {
+      string cityName = "Vancouver";
+      Place newPlace = new Place(cityName);
+      string updatedCityName = "Philadelphia";
+      newPlace.CityName = updatedCityName;
+      string result = newPlace.CityName;
+      Assert.AreEqual(updatedCityName, result);
+    }
   }
 }
