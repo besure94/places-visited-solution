@@ -5,7 +5,7 @@ namespace PlacesVisited.Models
   public class Place
   {
     public string CityName { get; set; }
-    public string CountryName { get; }
+    public string CountryName { get; set; }
     public string LengthOfStay { get; set; }
     public string Companions { get; set; }
     public string JournalEntry { get; set; }

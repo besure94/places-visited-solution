@@ -45,6 +45,17 @@ namespace PlacesVisited.Tests
     }
 
     [TestMethod]
+    public void SetCountryName_SetCountryName_String()
+    {
+      string countryName = "Canada";
+      Place newPlace = new Place("Vancouver", countryName, "3 days", "Brandon", "Biked to Stanley Park.");
+      string updatedCountryName = "Mexico";
+      newPlace.CountryName = updatedCountryName;
+      string result = newPlace.CountryName;
+      Assert.AreEqual(updatedCountryName, result);
+    }
+
+    [TestMethod]
     public void GetLengthOfStay_ReturnsLengthOfStay_String()
     {
       string lengthOfStay = "3 days";
