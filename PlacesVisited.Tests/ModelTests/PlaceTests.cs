@@ -11,7 +11,7 @@ namespace PlacesVisited.Tests
     [TestMethod]
     public void PlaceConstructor_CreatesInstanceOfPlace_Place()
     {
-      Place newPlace = new Place("Vancouver", "3 days");
+      Place newPlace = new Place("Vancouver", "3 days", "Brandon");
       Assert.AreEqual(typeof(Place), newPlace.GetType());
     }
 
@@ -19,7 +19,7 @@ namespace PlacesVisited.Tests
     public void GetCityName_ReturnsCityName_String()
     {
       string cityName = "Vancouver";
-      Place newPlace = new Place(cityName, "3 days");
+      Place newPlace = new Place(cityName, "3 days", "Brandon");
       string result = newPlace.CityName;
       Assert.AreEqual(cityName, result);
     }
@@ -28,7 +28,7 @@ namespace PlacesVisited.Tests
     public void SetCityName_SetCityName_String()
     {
       string cityName = "Vancouver";
-      Place newPlace = new Place(cityName, "5 days");
+      Place newPlace = new Place(cityName, "5 days", "Brandon");
       string updatedCityName = "Philadelphia";
       newPlace.CityName = updatedCityName;
       string result = newPlace.CityName;
@@ -39,20 +39,29 @@ namespace PlacesVisited.Tests
     public void GetLengthOfStay_ReturnsLengthOfStay_String()
     {
       string lengthOfStay = "3 days";
-      Place newPlace = new Place("Vancouver", lengthOfStay);
+      Place newPlace = new Place("Vancouver", lengthOfStay, "Brandon");
       string result = newPlace.LengthOfStay;
       Assert.AreEqual(lengthOfStay, result);
     }
 
     [TestMethod]
-    public void SetLengthOfStay_ReturnsLengthOfStay_String()
+    public void SetLengthOfStay_SetLengthOfStay_String()
     {
       string lengthOfStay = "3 days";
-      Place newPlace = new Place("Vancouver", lengthOfStay);
+      Place newPlace = new Place("Vancouver", lengthOfStay, "Brandon");
       string updatedLengthOfStay = "5 days";
       newPlace.LengthOfStay = updatedLengthOfStay;
       string result = newPlace.LengthOfStay;
       Assert.AreEqual(updatedLengthOfStay, result);
+    }
+
+    [TestMethod]
+    public void GetCompanions_ReturnsCompanions_String()
+    {
+      string companions = "Brandon";
+      Place newPlace = new Place("Vancouver", "3 days", companions);
+      string result = newPlace.Companions;
+      Assert.AreEqual(companions, result);
     }
   }
 }

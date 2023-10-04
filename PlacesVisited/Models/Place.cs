@@ -6,10 +6,12 @@ namespace PlacesVisited.Models
   {
     public string CityName { get; set; }
     public string LengthOfStay { get; set; }
-    public Place(string cityName, string lengthOfStay)
+    public string Companions { get; }
+    public Place(string cityName, string lengthOfStay, string companions)
     {
       CityName = cityName;
       LengthOfStay = lengthOfStay;
+      Companions = companions;
     }
   }
 }
