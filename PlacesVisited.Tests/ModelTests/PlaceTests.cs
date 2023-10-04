@@ -43,5 +43,16 @@ namespace PlacesVisited.Tests
       string result = newPlace.LengthOfStay;
       Assert.AreEqual(lengthOfStay, result);
     }
+
+    [TestMethod]
+    public void SetLengthOfStay_ReturnsLengthOfStay_String()
+    {
+      string lengthOfStay = "3 days";
+      Place newPlace = new Place("Vancouver", lengthOfStay);
+      string updatedLengthOfStay = "5 days";
+      newPlace.LengthOfStay = updatedLengthOfStay;
+      string result = newPlace.LengthOfStay;
+      Assert.AreEqual(updatedLengthOfStay, result);
+    }
   }
 }
