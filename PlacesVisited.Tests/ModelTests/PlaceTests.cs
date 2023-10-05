@@ -125,7 +125,7 @@ namespace PlacesVisited.Tests
     [TestMethod]
     public void GetImage_ReturnsImage_String()
     {
-      string imageUrl = ""
+      string imageUrl = "img/"
     }
 
     [TestMethod]
