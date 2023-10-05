@@ -18,7 +18,7 @@ namespace PlacesVisited.Tests
     [TestMethod]
     public void PlaceConstructor_CreatesInstanceOfPlace_Place()
     {
-      Place newPlace = new Place("Vancouver", "Canada", "3 days", "Brandon", "Biked to Stanley Park.");
+      Place newPlace = new Place("Vancouver", "Canada", "3 days", "Brandon", "Biked to Stanley Park.", "img/vancouver/vancouverbike.jpg");
       Assert.AreEqual(typeof(Place), newPlace.GetType());
     }
 
@@ -26,7 +26,7 @@ namespace PlacesVisited.Tests
     public void GetCityName_ReturnsCityName_String()
     {
       string cityName = "Vancouver";
-      Place newPlace = new Place(cityName, "Canada", "3 days", "Brandon", "Biked to Stanley Park.");
+      Place newPlace = new Place(cityName, "Canada", "3 days", "Brandon", "Biked to Stanley Park.", "img/vancouver/vancouverbike.jpg");
       string result = newPlace.CityName;
       Assert.AreEqual(cityName, result);
     }
@@ -35,7 +35,7 @@ namespace PlacesVisited.Tests
     public void SetCityName_SetCityName_String()
     {
       string cityName = "Vancouver";
-      Place newPlace = new Place(cityName, "Canada", "5 days", "Brandon", "Biked to Stanley Park.");
+      Place newPlace = new Place(cityName, "Canada", "5 days", "Brandon", "Biked to Stanley Park.", "img/vancouver/vancouverbike.jpg");
       string updatedCityName = "Philadelphia";
       newPlace.CityName = updatedCityName;
       string result = newPlace.CityName;
@@ -46,7 +46,7 @@ namespace PlacesVisited.Tests
     public void GetCountryName_ReturnsCountryName_String()
     {
       string countryName = "Canada";
-      Place newPlace = new Place("Vancouver", countryName, "3 days", "Brandon", "Biked to Stanley Park.");
+      Place newPlace = new Place("Vancouver", countryName, "3 days", "Brandon", "Biked to Stanley Park.", "img/vancouver/vancouverbike.jpg");
       string result = newPlace.CountryName;
       Assert.AreEqual(countryName, result);
     }
@@ -55,7 +55,7 @@ namespace PlacesVisited.Tests
     public void SetCountryName_SetCountryName_String()
     {
       string countryName = "Canada";
-      Place newPlace = new Place("Vancouver", countryName, "3 days", "Brandon", "Biked to Stanley Park.");
+      Place newPlace = new Place("Vancouver", countryName, "3 days", "Brandon", "Biked to Stanley Park.", "img/vancouver/vancouverbike.jpg");
       string updatedCountryName = "Mexico";
       newPlace.CountryName = updatedCountryName;
       string result = newPlace.CountryName;
@@ -66,7 +66,7 @@ namespace PlacesVisited.Tests
     public void GetLengthOfStay_ReturnsLengthOfStay_String()
     {
       string lengthOfStay = "3 days";
-      Place newPlace = new Place("Vancouver", "Canada",lengthOfStay, "Brandon", "Biked to Stanley Park.");
+      Place newPlace = new Place("Vancouver", "Canada",lengthOfStay, "Brandon", "Biked to Stanley Park.", "img/vancouver/vancouverbike.jpg");
       string result = newPlace.LengthOfStay;
       Assert.AreEqual(lengthOfStay, result);
     }
@@ -75,7 +75,7 @@ namespace PlacesVisited.Tests
     public void SetLengthOfStay_SetLengthOfStay_String()
     {
       string lengthOfStay = "3 days";
-      Place newPlace = new Place("Vancouver", "Canada",lengthOfStay, "Brandon", "Biked to Stanley Park.");
+      Place newPlace = new Place("Vancouver", "Canada",lengthOfStay, "Brandon", "Biked to Stanley Park.", "img/vancouver/vancouverbike.jpg");
       string updatedLengthOfStay = "5 days";
       newPlace.LengthOfStay = updatedLengthOfStay;
       string result = newPlace.LengthOfStay;
@@ -86,7 +86,7 @@ namespace PlacesVisited.Tests
     public void GetCompanions_ReturnsCompanions_String()
     {
       string companions = "Brandon";
-      Place newPlace = new Place("Vancouver", "Canada", "3 days", companions, "Biked to Stanley Park.");
+      Place newPlace = new Place("Vancouver", "Canada", "3 days", companions, "Biked to Stanley Park.", "img/vancouver/vancouverbike.jpg");
       string result = newPlace.Companions;
       Assert.AreEqual(companions, result);
     }
@@ -95,7 +95,7 @@ namespace PlacesVisited.Tests
     public void SetCompanions_SetCompanions_String()
     {
       string companions = "Brandon";
-      Place newPlace = new Place("Vancouver", "Canada", "3 days", companions, "Biked to Stanley Park.");
+      Place newPlace = new Place("Vancouver", "Canada", "3 days", companions, "Biked to Stanley Park.", "img/vancouver/vancouverbike.jpg");
       string updatedCompanions = "Kai";
       newPlace.Companions = updatedCompanions;
       string result = newPlace.Companions;
@@ -106,7 +106,7 @@ namespace PlacesVisited.Tests
     public void GetJournalEntry_ReturnsJournalEntry_String()
     {
       string journalEntry = "Biked to Stanley Park.";
-      Place newPlace = new Place("Vancouver", "Canada", "3 days", "Brandon", journalEntry);
+      Place newPlace = new Place("Vancouver", "Canada", "3 days", "Brandon", journalEntry, "img/vancouver/vancouverbike.jpg");
       string result = newPlace.JournalEntry;
       Assert.AreEqual(journalEntry, result);
     }
@@ -115,7 +115,7 @@ namespace PlacesVisited.Tests
     public void SetJournalEntry_SetJournalEntry_String()
     {
       string journalEntry = "Biked to Stanley Park.";
-      Place newPlace = new Place("Vancouver", "Canada", "3 days", "Brandon", journalEntry);
+      Place newPlace = new Place("Vancouver", "Canada", "3 days", "Brandon", journalEntry, "img/vancouver/vancouverbike.jpg");
       string updatedJournalEntry = "Took ferry to North Vancouver.";
       newPlace.JournalEntry = updatedJournalEntry;
       string result = newPlace.JournalEntry;
@@ -125,7 +125,10 @@ namespace PlacesVisited.Tests
     [TestMethod]
     public void GetImage_ReturnsImage_String()
     {
-      string imageUrl = "img/"
+      string imageUrl = "img/vancouver/vancouverbike.jpg";
+      Place newPlace = new Place("Vancouver", "Canada", "3 days", "Brandon", "Biked to Stanley Park", imageUrl);
+      string result = newPlace.ImageUrl;
+      Assert.AreEqual(imageUrl, result);
     }
 
     [TestMethod]
@@ -149,8 +152,10 @@ namespace PlacesVisited.Tests
       string companions02 = "Kai";
       string journalEntry01 = "Biked to Stanley Park.";
       string journalEntry02 = "Visited art museum.";
-      Place newPlace01 = new Place(cityName01, countryName01, lengthOfStay01, companions01, journalEntry01);
-      Place newPlace02 = new Place(cityName02, countryName02, lengthOfStay02, companions02, journalEntry02);
+      string imageUrl01 = "img/vancouver/vancouverbike.jpg";
+      string imageUrl02 = "img/vancouver/vancouverskyline.jpg";
+      Place newPlace01 = new Place(cityName01, countryName01, lengthOfStay01, companions01, journalEntry01, imageUrl01);
+      Place newPlace02 = new Place(cityName02, countryName02, lengthOfStay02, companions02, journalEntry02, imageUrl02);
       List<Place> newList = new List<Place> { newPlace01, newPlace02 };
       List<Place> result = Place.GetAll();
       CollectionAssert.AreEqual(newList, result);
@@ -159,8 +164,8 @@ namespace PlacesVisited.Tests
     [TestMethod]
     public void ClearAll_DeletesAllPlacesInList_Void()
     {
-      Place place01 = new Place("Vancouver", "Canada", "3 days", "Brandon", "Biked to Stanley Park.");
-      Place place02 = new Place("Philadelphia", "United States", "5 days", "Kai", "Visited art museum.");
+      Place place01 = new Place("Vancouver", "Canada", "3 days", "Brandon", "Biked to Stanley Park.", "img/vancouver/vancouverbike.jpg");
+      Place place02 = new Place("Philadelphia", "United States", "5 days", "Kai", "Visited art museum.", "img/vancouver/vancouverskyline.jpg");
       List<Place> expected = new List<Place> { };
       Place.ClearAll();
       CollectionAssert.AreEqual(expected, Place.GetAll());
@@ -174,7 +179,8 @@ namespace PlacesVisited.Tests
       string lengthOfStay = "3 days";
       string companions = "Brandon";
       string journalEntry = "Biked to Stanley Park.";
-      Place newPlace = new Place(cityName, countryName, lengthOfStay, companions, journalEntry);
+      string imageUrl = "img/vancouver/vancouverskyline.jpg";
+      Place newPlace = new Place(cityName, countryName, lengthOfStay, companions, journalEntry, imageUrl);
       int result = newPlace.Id;
       Assert.AreEqual(1, result);
     }
@@ -192,8 +198,10 @@ namespace PlacesVisited.Tests
       string companions02 = "Kai";
       string journalEntry01 = "Biked to Stanley Park.";
       string journalEntry02 = "Visited art museum.";
-      Place newPlace01 = new Place(cityName01, countryName01, lengthOfStay01, companions01, journalEntry01);
-      Place newPlace02 = new Place(cityName02, countryName02, lengthOfStay02, companions02, journalEntry02);
+      string imageUrl01 = "img/vancouver/vancouverskyline.jpg";
+      string imageUrl02 = "img/vancouver/vancouverbike.jpg";
+      Place newPlace01 = new Place(cityName01, countryName01, lengthOfStay01, companions01, journalEntry01, imageUrl01);
+      Place newPlace02 = new Place(cityName02, countryName02, lengthOfStay02, companions02, journalEntry02, imageUrl02);
       Place result = Place.Find(2);
       Assert.AreEqual(newPlace02, result);
     }

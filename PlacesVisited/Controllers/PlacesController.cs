@@ -21,9 +21,9 @@ namespace PlacesVisited.Controllers
     }
 
     [HttpPost("/places")]
-    public ActionResult Create(string cityName, string countryName, string lengthOfStay, string companions, string journalEntry)
+    public ActionResult Create(string cityName, string countryName, string lengthOfStay, string companions, string journalEntry, string imageUrl)
     {
-      Place newPlace = new Place(cityName, countryName, lengthOfStay, companions, journalEntry);
+      Place newPlace = new Place(cityName, countryName, lengthOfStay, companions, journalEntry, imageUrl);
       return RedirectToAction("Index");
     }
 
