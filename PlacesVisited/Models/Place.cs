@@ -9,6 +9,7 @@ namespace PlacesVisited.Models
     public string LengthOfStay { get; set; }
     public string Companions { get; set; }
     public string JournalEntry { get; set; }
+    public int Id { get; }
     private static List<Place> _instances = new List<Place> { };
 
     public Place(string cityName, string countryName, string lengthOfStay, string companions, string journalEntry)
@@ -29,6 +30,11 @@ namespace PlacesVisited.Models
     public static void ClearAll()
     {
       _instances.Clear();
+    }
+
+    public static Place Find(int searchId)
+    {
+      return _instances[searchId-1];
     }
   }
 }

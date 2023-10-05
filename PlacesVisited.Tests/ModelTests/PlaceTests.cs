@@ -158,5 +158,18 @@ namespace PlacesVisited.Tests
       Place.ClearAll();
       CollectionAssert.AreEqual(expected, Place.GetAll());
     }
+
+    [TestMethod]
+    public void GetId_ItemsInstantiateWithAnIdAndGetterReturns_Int()
+    {
+      string cityName = "Vancouver";
+      string countryName = "Canada";
+      string lengthOfStay = "3 days";
+      string companions = "Brandon";
+      string journalEntry = "Biked to Stanley Park.";
+      Place newPlace = new Place(cityName, countryName, lengthOfStay, companions, journalEntry);
+      int result = newPlace.Id;
+      Assert.AreEqual(0, result);
+    }
   }
 }
