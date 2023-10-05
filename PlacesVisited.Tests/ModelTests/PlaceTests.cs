@@ -148,5 +148,15 @@ namespace PlacesVisited.Tests
       List<Place> result = Place.GetAll();
       CollectionAssert.AreEqual(newList, result);
     }
+
+    [TestMethod]
+    public void ClearAll_DeletesAllPlacesInList_Void()
+    {
+      Place place01 = new Place("Vancouver", "Canada", "3 days", "Brandon", "Biked to Stanley Park.");
+      Place place02 = new Place("Philadelphia", "United States", "5 days", "Kai", "Visited art museum.");
+      List<Place> expected = new List<Place> { };
+      Place.ClearAll();
+      CollectionAssert.AreEqual(expected, Place.GetAll());
+    }
   }
 }
