@@ -123,12 +123,23 @@ namespace PlacesVisited.Tests
     }
 
     [TestMethod]
-    public void GetImage_ReturnsImage_String()
+    public void GetImageUrl_ReturnsImageUrl_String()
     {
       string imageUrl = "img/vancouver/vancouverbike.jpg";
       Place newPlace = new Place("Vancouver", "Canada", "3 days", "Brandon", "Biked to Stanley Park", imageUrl);
       string result = newPlace.ImageUrl;
       Assert.AreEqual(imageUrl, result);
+    }
+
+    [TestMethod]
+    public void SetImageUrl_SetImageUrl_String()
+    {
+      string imageUrl = "img/vancouver/vancouverbike.jpg";
+      Place newPlace = new Place("Vancouver", "Canada", "3 days", "Brandon", "Biked to Stanley Park", imageUrl);
+      string updatedImageUrl = "img/vancouver/vancouverskyline.jpg";
+      newPlace.ImageUrl = updatedImageUrl;
+      string result = newPlace.ImageUrl;
+      Assert.AreEqual(updatedImageUrl, result);
     }
 
     [TestMethod]

@@ -9,7 +9,7 @@ namespace PlacesVisited.Models
     public string LengthOfStay { get; set; }
     public string Companions { get; set; }
     public string JournalEntry { get; set; }
-    public string ImageUrl { get; }
+    public string ImageUrl { get; set; }
     public int Id { get; }
     private static List<Place> _instances = new List<Place> { };
 
