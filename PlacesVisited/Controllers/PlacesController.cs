@@ -27,12 +27,12 @@ namespace PlacesVisited.Controllers
       return RedirectToAction("Index");
     }
 
-    // [HttpPost("/places/delete")]
-    // public ActionResult DeleteAll()
-    // {
-    //   Place.ClearAll();
-    //   return View();
-    // }
+    [HttpPost("/places/delete")]
+    public ActionResult DeleteAll()
+    {
+      Place.ClearAll();
+      return View();
+    }
 
     [HttpGet("/places/{id}")]
     public ActionResult Show(int id)
