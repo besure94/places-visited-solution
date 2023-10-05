@@ -169,7 +169,26 @@ namespace PlacesVisited.Tests
       string journalEntry = "Biked to Stanley Park.";
       Place newPlace = new Place(cityName, countryName, lengthOfStay, companions, journalEntry);
       int result = newPlace.Id;
-      Assert.AreEqual(0, result);
+      Assert.AreEqual(1, result);
+    }
+
+    [TestMethod]
+    public void Find_ReturnsCorrectItem_Item()
+    {
+      string cityName01 = "Vancouver";
+      string cityName02 = "Philadelphia";
+      string countryName01 = "Canada";
+      string countryName02 = "United States";
+      string lengthOfStay01 = "3 days";
+      string lengthOfStay02 = "5 days";
+      string companions01 = "Brandon";
+      string companions02 = "Kai";
+      string journalEntry01 = "Biked to Stanley Park.";
+      string journalEntry02 = "Visited art museum.";
+      Place newPlace01 = new Place(cityName01, countryName01, lengthOfStay01, companions01, journalEntry01);
+      Place newPlace02 = new Place(cityName02, countryName02, lengthOfStay02, companions02, journalEntry02);
+      Place result = Place.Find(2);
+      Assert.AreEqual(newPlace02, result);
     }
   }
 }
