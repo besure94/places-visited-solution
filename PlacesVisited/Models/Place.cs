@@ -16,7 +16,7 @@ namespace PlacesVisited.Models
     {
       CityName = cityName;
       CountryName = countryName;
-      LengthOfStay = lengthOfStay;
+      LengthOfStay = lengthOfStay.ToLower();
       Companions = companions;
       JournalEntry = journalEntry;
       _instances.Add(this);

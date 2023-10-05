@@ -12,8 +12,11 @@
   <div class="container">
     <body>
       <h1>Place Details:</h1>
-      <h2>@Model.CityName</h2>
+      <h2>@Model.CityName, @Model.CountryName</h2>
+      <p>I stayed here for @Model.LengthOfStay with @Model.Companions. @Model.JournalEntry</p>
+
       <a href="/places/new">Add another place</a>
+      <br>
       <a href="/places">View all places</a>
     </body>
   </div>
