@@ -6,8 +6,14 @@ using System;
 namespace PlacesVisited.Tests
 {
   [TestClass]
-  public class PlaceTests
+  public class PlaceTests : IDisposable
   {
+
+    public void Dispose()
+    {
+      Place.ClearAll();
+    }
+
     [TestMethod]
     public void PlaceConstructor_CreatesInstanceOfPlace_Place()
     {
@@ -121,6 +127,26 @@ namespace PlacesVisited.Tests
       List<Place> newPlace = new List<Place> { };
       List<Place> result = Place.GetAll();
       CollectionAssert.AreEqual(newPlace, result);
+    }
+
+    [TestMethod]
+    public void GetAll_ReturnsItems_ItemList()
+    {
+      string cityName01 = "Vancouver";
+      string cityName02 = "Philadelphia";
+      string countryName01 = "Canada";
+      string countryName02 = "United States";
+      string lengthOfStay01 = "3 days";
+      string lengthOfStay02 = "5 days";
+      string companions01 = "Brandon";
+      string companions02 = "Kai";
+      string journalEntry01 = "Biked to Stanley Park.";
+      string journalEntry02 = "Visited art museum.";
+      Place newPlace01 = new Place(cityName01, countryName01, lengthOfStay01, companions01, journalEntry01);
+      Place newPlace02 = new Place(cityName02, countryName02, lengthOfStay02, companions02, journalEntry02);
+      List<Place> newList = new List<Place> { newPlace01, newPlace02 };
+      List<Place> result = Place.GetAll();
+      CollectionAssert.AreEqual(newList, result);
     }
   }
 }
