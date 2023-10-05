@@ -2,6 +2,7 @@ using PlacesVisited.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using System;
+using System.Reflection;
 
 namespace PlacesVisited.Tests
 {
@@ -119,6 +120,12 @@ namespace PlacesVisited.Tests
       newPlace.JournalEntry = updatedJournalEntry;
       string result = newPlace.JournalEntry;
       Assert.AreEqual(updatedJournalEntry, result);
+    }
+
+    [TestMethod]
+    public void GetImage_ReturnsImage_String()
+    {
+      string imageUrl = ""
     }
 
     [TestMethod]
