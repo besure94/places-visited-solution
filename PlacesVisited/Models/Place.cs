@@ -9,6 +9,8 @@ namespace PlacesVisited.Models
     public string LengthOfStay { get; set; }
     public string Companions { get; set; }
     public string JournalEntry { get; set; }
+    private static List<Place> _instances = new List<Place> { };
+
     public Place(string cityName, string countryName, string lengthOfStay, string companions, string journalEntry)
     {
       CityName = cityName;
@@ -16,6 +18,11 @@ namespace PlacesVisited.Models
       LengthOfStay = lengthOfStay;
       Companions = companions;
       JournalEntry = journalEntry;
+    }
+
+    public static List<Place> GetAll()
+    {
+      return _instances;
     }
   }
 }

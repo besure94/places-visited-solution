@@ -114,5 +114,13 @@ namespace PlacesVisited.Tests
       string result = newPlace.JournalEntry;
       Assert.AreEqual(updatedJournalEntry, result);
     }
+
+    [TestMethod]
+    public void GetAll_ReturnsEmptyList_ItemList()
+    {
+      List<Place> newPlace = new List<Place> { };
+      List<Place> result = Place.GetAll();
+      CollectionAssert.AreEqual(newPlace, result);
+    }
   }
 }
