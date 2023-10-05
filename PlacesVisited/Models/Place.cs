@@ -20,6 +20,7 @@ namespace PlacesVisited.Models
       Companions = companions;
       JournalEntry = journalEntry;
       _instances.Add(this);
+      Id = _instances.Count;
     }
 
     public static List<Place> GetAll()
@@ -34,7 +35,7 @@ namespace PlacesVisited.Models
 
     public static Place Find(int searchId)
     {
-      return _instances[searchId-1];
+      return _instances[searchId+1];
     }
   }
 }
